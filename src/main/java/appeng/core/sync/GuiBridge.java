@@ -56,6 +56,7 @@ import appeng.helpers.WirelessTerminalGuiObject;
 import appeng.items.contents.QuartzKnifeObj;
 import appeng.parts.automation.PartFormationPlane;
 import appeng.parts.automation.PartLevelEmitter;
+import appeng.parts.automation.PartOreDictExportBus;
 import appeng.parts.misc.PartOreDicStorageBus;
 import appeng.parts.misc.PartStorageBus;
 import appeng.parts.reporting.*;
@@ -126,6 +127,8 @@ public enum GuiBridge implements IGuiHandler {
     GUI_FLUID_INTERFACE(ContainerFluidInterface.class, IFluidInterfaceHost.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
 
     GUI_BUS(ContainerUpgradeable.class, IUpgradeableHost.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
+
+    GUI_OREDICTEXPORTBUS(ContainerOreDictExportBus.class, PartOreDictExportBus.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
 
     GUI_BUS_FLUID(ContainerFluidIO.class, PartSharedFluidBus.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
 
