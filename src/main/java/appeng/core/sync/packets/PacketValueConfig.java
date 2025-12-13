@@ -24,7 +24,9 @@ import appeng.api.config.Settings;
 import appeng.api.util.IConfigManager;
 import appeng.api.util.IConfigurableObject;
 import appeng.client.gui.implementations.GuiCraftingCPU;
+import appeng.client.gui.implementations.GuiOreDictExportBus;
 import appeng.client.gui.implementations.GuiOreDictStorageBus;
+import appeng.container.implementations.ContainerOreDictExportBus;
 import appeng.container.AEBaseContainer;
 import appeng.container.implementations.*;
 import appeng.core.sync.AppEngPacket;
@@ -188,6 +190,15 @@ public class PacketValueConfig extends AppEngPacket {
                     ((ContainerOreDictStorageBus) c).sendRegex();
                 }
             }
+        } else if (this.Name.startsWith("OreDictExportBus")) {
+            if (c instanceof ContainerOreDictExportBus) {
+                if (this.Name.equals("OreDictExportBus.save")) {
+                    ((ContainerOreDictExportBus) c).saveOreMatch(this.Value);
+                }
+                if (this.Name.equals("OreDictExportBus.getRegex")) {
+                    ((ContainerOreDictExportBus) c).sendRegex();
+                }
+            }
         } else if (this.Name.startsWith("CellWorkbench.") && c instanceof ContainerCellWorkbench) {
             final ContainerCellWorkbench ccw = (ContainerCellWorkbench) c;
             if (this.Name.equals("CellWorkbench.Action")) {
@@ -241,6 +252,11 @@ public class PacketValueConfig extends AppEngPacket {
             final GuiScreen gs = Minecraft.getMinecraft().currentScreen;
             if (gs instanceof GuiOreDictStorageBus) {
                 ((GuiOreDictStorageBus) gs).fillRegex(this.Value);
+            }
+        } else if (this.Name.equals("OreDictExportBus.sendRegex")) {
+            final GuiScreen gs = Minecraft.getMinecraft().currentScreen;
+            if (gs instanceof GuiOreDictExportBus) {
+                ((GuiOreDictExportBus) gs).fillRegex(this.Value);
             }
         } else if (c instanceof IConfigurableObject) {
             final IConfigManager cm = ((IConfigurableObject) c).getConfigManager();

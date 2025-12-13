@@ -139,6 +139,7 @@ public enum PartType {
 
     FLUID_EXPORT_BUS(261, "fluid_export_bus", EnumSet.of(AEFeature.FLUID_EXPORT_BUS), EnumSet.noneOf(IntegrationType.class), PartFluidExportBus.class),
 
+    OREDICT_EXPORT_BUS(262, "oredict_export_bus", EnumSet.of(AEFeature.EXPORT_BUS), EnumSet.noneOf(IntegrationType.class), PartOreDictExportBus.class),
     LEVEL_EMITTER(280, "level_emitter", EnumSet.of(AEFeature.LEVEL_EMITTER), EnumSet.noneOf(IntegrationType.class), PartLevelEmitter.class),
     FLUID_LEVEL_EMITTER(281, "fluid_level_emitter", EnumSet.of(AEFeature.FLUID_LEVEL_EMITTER), EnumSet.noneOf(IntegrationType.class), PartFluidLevelEmitter.class),
 
