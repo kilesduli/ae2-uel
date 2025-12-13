@@ -49,6 +49,7 @@ public enum GuiText {
     ImportBusFluids,
     ExportBus,
     ExportBusFluids,
+    OreDictExportBus,
 
     CellWorkbench,
     NetworkDetails,

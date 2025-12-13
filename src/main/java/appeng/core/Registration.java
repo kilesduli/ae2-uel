@@ -361,6 +361,10 @@ final class Registration {
         Upgrades.REDSTONE.registerItem(parts.fluidExportBus(), 1);
         Upgrades.SPEED.registerItem(parts.fluidExportBus(), 4);
 
+        // OreDict Export Bus
+        Upgrades.REDSTONE.registerItem(parts.oreDictExportBus(), 1);
+        Upgrades.SPEED.registerItem(parts.oreDictExportBus(), 4);
+
         // Storage Cells
         Upgrades.FUZZY.registerItem(items.cell1k(), 1);
         Upgrades.INVERTER.registerItem(items.cell1k(), 1);
